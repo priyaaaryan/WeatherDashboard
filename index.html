@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Weather Dashboard</title>
+</head>
+
+<body class="flex-column min-100-vh">
+  <header class="header">
+    <h1 class="app-title">Weather Dashboard</h1>
+  </header>
+
+  <main class="flex-row justify-space-between">
+    <div class="col-12 col-md-3">
+      <div class="card">
+        <h1 class="card-header text-uppercase">Search for a City: </h1>
+        <form id="city-form" class="card-body">
+          <input name="city" id="city" type="text" autofocus="true" class="form-input" placeholder="San Diego"/>
+          <button type="submit" class="btn">Search</button>
+        </form>
+        <hr>
+        <div id="history-container" class="list-group"></div>
+      </div>
+    </div>
+  
+    <div class="col-12 col-md-9">
+      <div class="current-weather" id="current-weather" style="display: none;">
+        <h1 class="subtitle"><span id="city"></span> (<span id="date"></span>) <img style="vertical-align: middle;" src="" id="icon"></h1>
+        <p>Temp: <span id="temperature"></span>&#8457</p>
+        <p>Wind: <span id="wind"></span> MPH</p>
+        <p>Humidity: <span id="humidity"></span>%</p>
+        <p>UV Index: <span class="uv-indicator" id="uv"></span></p>
+      </div>
+      <div id="forecast" style="display: none; margin-top: 25px;">
+        <h1 class="subtitle">5-Day Forecast: </h1>
+        <div class="flex-row justify-space-between" id="forecast-container"></div>
+      </div>
+    </div>
+  </main>
+  <script src="./assets/js/homepage.js"></script>
+</body>
+
+</html>
