@@ -35,7 +35,7 @@ var formSubmitHandler = function (event) {
 var getWeather = function (city) {
   // First fetch latitude and longitude of city from open weather then use it to fetch weather of the geolocation
   var coordinateApiURL =
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
     city +
     "&appid=61601e19c5fa6e594bfdc849af6afd53";
   fetch(coordinateApiURL).then(function (response1) {
@@ -84,7 +84,7 @@ var displayWeatherData = function (city, weatherData, persist) {
   currentWeatherContainerEl.querySelector("#humidity").textContent =
     weatherData.current.humidity;
   currentWeatherContainerEl.querySelector("#icon").src =
-    "http://openweathermap.org/img/w/" +
+    "https://openweathermap.org/img/w/" +
     weatherData.current.weather[0].icon +
     ".png";
 
@@ -121,7 +121,7 @@ var displayWeatherData = function (city, weatherData, persist) {
     var iconEl = document.createElement("img");
     iconEl.setAttribute(
       "src",
-      "http://openweathermap.org/img/w/" +
+      "https://openweathermap.org/img/w/" +
         weatherData.daily[i].weather[0].icon +
         ".png"
     );
